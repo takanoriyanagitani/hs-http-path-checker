@@ -1,0 +1,35 @@
+cabal-version:      3.14
+name:               hs-http-path-checker
+version:            0.1.0.0
+-- synopsis:
+-- description:
+license:            Apache-2.0
+license-file:       LICENSE
+author:             yanagitani
+maintainer:         takanori.yanagitani@gmail.com
+-- copyright:
+category:           Text
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+-- extra-source-files:
+
+common warnings
+    ghc-options: -Wall -Werror
+
+executable hs-http-path-checker
+    import:           warnings
+    main-is:          Main.hs
+    build-depends:
+        base >= 4.14 && < 5,
+        hs-http-path-checker,
+    hs-source-dirs:   app
+    default-language: GHC2021
+
+library
+    import:           warnings
+    exposed-modules:  HttpPathChecker
+    build-depends:
+        base >= 4.14 && < 5,
+        network-uri >= 2.6 && < 2.8,
+    hs-source-dirs:   src
+    default-language: GHC2021
